@@ -9,7 +9,7 @@ export default function Card({ character }) {
       <h2>{character.name}</h2>
       <p>{character.edad}</p>
       <p>{character.fuerza}</p>
-      <img src={character.img}></img>
+      <img src={character?.img}></img>
     </div>
   );
 }

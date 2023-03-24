@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Form.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function FormCreate({ addCharacter }) {
+export default function FormCreate({ addCharacter, editCharacter }) {
   const navigate = useNavigate();
+  const { type } = useParams();
+  console.log("type ", type);
 
   const [inputs, setInputs] = useState({
     name: "",
@@ -51,7 +53,12 @@ export default function FormCreate({ addCharacter }) {
     e.preventDefault();
     const aux = Object.keys(errors);
     if (aux.length === 0) {
-      addCharacter(inputs);
+      if (type === "edit") {
+        editCharacter(inputs);
+      } else {
+        addCharacter(inputs);
+      }
+
       setInputs({
         name: "",
         edad: "",
@@ -64,7 +71,7 @@ export default function FormCreate({ addCharacter }) {
         fuerza: "",
         img: "",
       });
-      navigate("/");
+      navigate("/home");
       return alert("is create");
       // ;
     }
@@ -73,7 +80,7 @@ export default function FormCreate({ addCharacter }) {
   return (
     console.log("inputs is", inputs),
     (
-      <div>
+      <div className="form">
         <form onSubmit={handleSubmit}>
           <label>Name:</label>
           <input name="name" value={inputs.name} onChange={handleInput}></input>
@@ -106,5 +113,12 @@ export default function FormCreate({ addCharacter }) {
     edad: "",
     fuerza: "",
     img: ""
+  }
+*/
+
+/*
+ useParams {
+    type: create,
+    id: undefined
   }
 */
