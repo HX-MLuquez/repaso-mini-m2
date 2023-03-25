@@ -1,12 +1,15 @@
-.login{
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    align-items: center;
-   margin-top: 40px;
-   background-color: rgb(154, 154, 233);
-   width: 50%;
-   border-radius: 6px;
-   height: 50vh
+.login {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  background-color: rgb(188, 188, 234);
+  width: 50%;
+  border-radius: 12px;
+  height: 50vh;
+}
 
+.entry{
+    margin-top: 20px;
 }

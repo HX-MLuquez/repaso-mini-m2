@@ -1,23 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Card.css'
+import "./Card.css";
 
 export default function Card({ character }) {
-  let id = 1;
+  let id = character.id;
   return (
     <div className="card">
-      <h2>{character.name}</h2>
-      <p>{character.edad}</p>
-      <p>{character.fuerza}</p>
-      <img src={character?.img}></img>
+      <Link to={`/detail/${id}`}>
+        <h2>{character.name}</h2>
+        <p>Age: {character.age}</p>
+        <p>Force: {character.force}</p>
+        <img src={character?.img}></img>
+      </Link>
     </div>
   );
 }
 
 /*
   name: "",
-    edad: "",
-    fuerza: "",
+    age: "",
+    force: "",
     img: ""
 <Link to={`detail/${id}`}>
 </Link>

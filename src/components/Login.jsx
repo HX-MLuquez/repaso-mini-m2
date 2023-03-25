@@ -56,26 +56,40 @@ export default function Login({ loginAccess }) {
     }
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="login">
-        <label>Email:</label>
-        <input
-          name="email"
-          value={inputs.email}
-          onChange={handleChange}
-        ></input>
-        <label>Password:</label>
-        <input
-          name="password"
-          value={inputs.password}
-          onChange={handleChange}
-        ></input>
-        {Object.keys(errors).length === 0 ? (
-          <button type="submit">Ingresar</button>
-        ) : (
-          <div>insert info</div>
-        )}{" "}
-      </div>
-    </form>
+    <div className="container">
+      <h1>CM</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="login">
+          <div className="entry">
+            <label>Email:</label>
+          </div>
+          <div className="entry">
+            <input
+              name="email"
+              value={inputs.email}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div className="entry">
+            <label>Password:</label>
+          </div>
+          <div className="entry">
+            <input
+              name="password"
+              value={inputs.password}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <hr></hr>
+          <div className="entry">
+            {Object.keys(errors).length === 0 ? (
+              <button type="submit">Ingresar</button>
+            ) : (
+              <div>insert info</div>
+            )}{" "}
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }

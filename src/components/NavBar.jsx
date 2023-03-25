@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './NavBar.css'
 
-export default function NavBar({logout, deleteChar}) {
+export default function NavBar({logout}) {
   const [char,setChar]= useState("")
   function handleChange(e){
     setChar(e.target.value)
@@ -20,8 +20,9 @@ export default function NavBar({logout, deleteChar}) {
       <Link to="/form/edit">
         <button>Edit</button>
       </Link>
-        <input name="deleteChar" value={char} onChange={handleChange}></input>
-        <button onClick={()=> deleteChar(char)}>Delete</button>
+      <Link to="/form/delete">
+        <button>Delete</button>
+      </Link>
         <button onClick={logout}>LogOut</button>
     </div>
   );
