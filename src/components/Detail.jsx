@@ -17,15 +17,9 @@ export default function Detail({ characters }) {
         <p>Force: </p>
         <p>{character.force}</p>
       </div>
-
       <Link to={`/detail/${id}`}>
         <img src={character?.img}></img>
       </Link>
     </div>
   );
 }
-
-/*
-fetch a ese producto id 1
-
-*/

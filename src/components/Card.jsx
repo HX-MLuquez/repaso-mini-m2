@@ -15,12 +15,3 @@ export default function Card({ character }) {
     </div>
   );
 }
-
-/*
-  name: "",
-    age: "",
-    force: "",
-    img: ""
-<Link to={`detail/${id}`}>
-</Link>
-*/

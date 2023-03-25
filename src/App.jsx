@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
-
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
@@ -12,7 +11,7 @@ import Login from "./components/Login";
 
 let charTest = {
   id: "900",
-  name: "Mauuu",
+  name: "Toto",
   age: "555",
   force: "ninguna",
   img: "https://m.media-amazon.com/images/M/MV5BMjY5MTI3OGEtMTgyYy00ODM0LWIzNGQtNTdmYjE0MDY3MjE3XkEyXkFqcGdeQXVyMTA1NjE5MTAz._V1_.jpg",
@@ -44,7 +43,7 @@ function App() {
   function editCharacter(charEdit) {
     let result = characters.map((ch) => {
       if (charEdit.id === ch.id) {
-        // en este condicional al matchear por id este es el único campo que no se puede editar
+        // este condicional al matchear por id este es el único campo que no se puede editar
         ch = charEdit;
       }
       return ch;
@@ -62,7 +61,6 @@ function App() {
   }
 
   return (
-    // console.log("chars", characters),
     <div className="App">
       {location.pathname === "/" ? null : <NavBar logout={logout}></NavBar>}
       <Routes>
@@ -79,25 +77,13 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/detail/:id" element={<Detail characters={characters}/>}></Route>
+        <Route
+          path="/detail/:id"
+          element={<Detail characters={characters} />}
+        ></Route>
       </Routes>
     </div>
   );
 }
 
 export default App;
-
-/*
-{
-    name: "",
-    age: "",
-    force: "",
-    img: ""
-  }
-
-
-  params {
-    type: undefined,
-    id: undefined
-  }
-*/

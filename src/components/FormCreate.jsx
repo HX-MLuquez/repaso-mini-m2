@@ -10,10 +10,9 @@ export default function FormCreate({
 }) {
   const navigate = useNavigate();
   const { type } = useParams();
-  // console.log("type ", type);
 
   const [inputs, setInputs] = useState({
-    id:"",
+    id: "",
     name: "",
     age: "",
     force: "",
@@ -21,7 +20,7 @@ export default function FormCreate({
     name_search: "",
   });
   const [errors, setErrors] = useState({
-    id:"",
+    id: "",
     name: "",
     age: "",
     force: "",
@@ -79,9 +78,8 @@ export default function FormCreate({
         addCharacter(inputs);
         alert("is create");
       }
-
       setInputs({
-        id:"",
+        id: "",
         name: "",
         age: "",
         force: "",
@@ -89,7 +87,7 @@ export default function FormCreate({
         name_search: "",
       });
       setErrors({
-        id:"",
+        id: "",
         name: "",
         age: "",
         force: "",
@@ -97,12 +95,10 @@ export default function FormCreate({
       });
       navigate("/home");
       return "ok";
-      // ;
     }
     return alert("Error");
   }
   return (
-    // console.log("inputs is", inputs),
     <div className="form">
       {type === "edit" || type === "delete" ? (
         <div>
@@ -126,7 +122,6 @@ export default function FormCreate({
         <label>Force:</label>
         <input name="force" value={inputs.force} onChange={handleInput}></input>
         <p className="danger">{errors.force}</p>
-
         <label>Image:</label>
         <input name="img" value={inputs.img} onChange={handleInput}></input>
         <p className="danger">{errors.img}</p>
@@ -144,18 +139,3 @@ export default function FormCreate({
     </div>
   );
 }
-/*
-{
-    name: "",
-    age: "",
-    force: "",
-    img: ""
-  }
-*/
-
-/*
- useParams {
-    type: create,
-    id: undefined
-  }
-*/

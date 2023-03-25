@@ -40,9 +40,6 @@ export default function Login({ loginAccess }) {
     e.preventDefault();
     const aux = Object.keys(errors);
     if (aux.length === 0) {
-      /*
-    ---> enviamos info state a nuestra DB
-    */
       setInputs({
         email: "",
         password: "",
@@ -51,7 +48,7 @@ export default function Login({ loginAccess }) {
         email: "",
         password: "",
       });
-      alert("Bienvenido a la app Card Maker");
+      alert("Welcome to app Card Maker");
       loginAccess();
     }
   }

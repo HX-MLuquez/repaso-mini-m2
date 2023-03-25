@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import './NavBar.css'
+import "./NavBar.css";
 
-export default function NavBar({logout}) {
-  const [char,setChar]= useState("")
-  function handleChange(e){
-    setChar(e.target.value)
-  }
-
+export default function NavBar({ logout }) {
   return (
     <div className="nav">
       <Link to="/home">
         <button>Home</button>
       </Link>
-      {/* "/form/:type" */}
       <Link to="/form/create">
         <button>Create</button>
       </Link>
@@ -23,13 +17,7 @@ export default function NavBar({logout}) {
       <Link to="/form/delete">
         <button>Delete</button>
       </Link>
-        <button onClick={logout}>LogOut</button>
+      <button onClick={logout}>LogOut</button>
     </div>
   );
 }
-/*
- params {
-    type: create,
-    id: undefined
-  }
-*/
